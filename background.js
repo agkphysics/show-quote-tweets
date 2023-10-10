@@ -7,6 +7,6 @@ browser.pageAction.onClicked.addListener((tab) => {
         "retweets/with_comments"
     );
     console.log(`Tab ${tab.id} -> ${newUrl}`);
-    browser.tabs.update(tab.id, { url: newUrl });
+    browser.tabs.create({ url: newUrl });
 });
 console.log("Added listeners for pageAction.");
