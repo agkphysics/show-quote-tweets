@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Show quote Tweets",
   "description": "Adds a button to open Twitter/X quote Tweets.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Aaron Keesing",
   "homepage_url": "https://github.com/agkphysics/show-quote-tweets",
   "icons": {
