@@ -1,5 +1,5 @@
 browser.pageAction.onClicked.addListener((tab) => {
-    const re = /twitter\.com(\/.*\/status\/[0-9]+).*/;
+    const re = /(?:twitter|x)\.com(\/.*\/status\/[0-9]+).*/;
     if (!re.test(tab.url))
         return;
     const newUrl = new URL(tab.url);
