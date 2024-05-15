@@ -1,13 +1,13 @@
 browser.pageAction.onClicked.addListener((tab) => {
-    if (!/twitter\.com\/.*\/status/.test(tab.url))
+    const re = /twitter\.com(\/.*\/status\/[0-9]+).*/;
+    if (!re.test(tab.url))
         return;
     const newUrl = new URL(tab.url);
     newUrl.search = "";
     newUrl.hash = "";
+    path = tab.url.match(re)[1];
     newUrl.pathname = (
-        newUrl.pathname +
-        (newUrl.pathname.endsWith("/") ? "" : "/") +
-        "retweets/with_comments"
+        path + (path.endsWith("/") ? "" : "/") + "retweets/with_comments"
     );
     console.log(`Tab ${tab.id} -> ${newUrl}`);
     browser.tabs.create({ url: newUrl.href, openerTabId: tab.id });
